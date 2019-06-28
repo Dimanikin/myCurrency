@@ -18,40 +18,49 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <prototypes>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="Cell" id="INL-rw-Pbn" customClass="CustomizeCell" customModule="myCurrency" customModuleProvider="target">
-                                <rect key="frame" x="0.0" y="28" width="414" height="44"/>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="Cell" rowHeight="68" id="INL-rw-Pbn" customClass="CustomizeCell" customModule="myCurrency" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="28" width="414" height="68"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="INL-rw-Pbn" id="K2u-HJ-P6P">
-                                    <rect key="frame" x="0.0" y="0.0" width="414" height="43.5"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="414" height="67.5"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
-                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="USD" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xui-yo-qCg">
-                                            <rect key="frame" x="20" y="2" width="48" height="41"/>
-                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="USD" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xui-yo-qCg">
+                                            <rect key="frame" x="20" y="13.5" width="48" height="41"/>
                                             <fontDescription key="fontDescription" name="AvenirNextCondensed-DemiBold" family="Avenir Next Condensed" pointSize="30"/>
                                             <nil key="textColor"/>
                                             <nil key="highlightedColor"/>
                                         </label>
-                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="0.90" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="TEB-He-ggf">
-                                            <rect key="frame" x="351" y="5" width="43" height="32"/>
-                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                            <fontDescription key="fontDescription" name="AvenirNextCondensed-Regular" family="Avenir Next Condensed" pointSize="23"/>
+                                        <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" textAlignment="right" adjustsFontSizeToFit="NO" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="tnA-iu-ies">
+                                            <rect key="frame" x="334" y="11" width="60" height="23"/>
+                                            <constraints>
+                                                <constraint firstAttribute="width" constant="60" id="mhH-d7-ODD"/>
+                                            </constraints>
                                             <nil key="textColor"/>
-                                            <nil key="highlightedColor"/>
-                                        </label>
-                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Американский доллар" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="SZk-IS-dpi">
-                                            <rect key="frame" x="262" y="25" width="132" height="18"/>
-                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="19"/>
+                                            <textInputTraits key="textInputTraits" keyboardType="numberPad"/>
+                                        </textField>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Американский доллар" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="SZk-IS-dpi">
+                                            <rect key="frame" x="262" y="35" width="132" height="18"/>
                                             <fontDescription key="fontDescription" name="AvenirNextCondensed-UltraLight" family="Avenir Next Condensed" pointSize="13"/>
                                             <color key="textColor" cocoaTouchSystemColor="scrollViewTexturedBackgroundColor"/>
                                             <nil key="highlightedColor"/>
                                         </label>
                                     </subviews>
+                                    <constraints>
+                                        <constraint firstItem="tnA-iu-ies" firstAttribute="trailing" secondItem="SZk-IS-dpi" secondAttribute="trailing" id="B5p-2f-tN4"/>
+                                        <constraint firstItem="SZk-IS-dpi" firstAttribute="top" secondItem="tnA-iu-ies" secondAttribute="bottom" constant="1" id="D1H-fu-BDW"/>
+                                        <constraint firstItem="xui-yo-qCg" firstAttribute="leading" secondItem="K2u-HJ-P6P" secondAttribute="leading" constant="20" id="DDT-2b-5ur"/>
+                                        <constraint firstAttribute="trailing" secondItem="tnA-iu-ies" secondAttribute="trailing" constant="20" id="I4e-nc-tNE"/>
+                                        <constraint firstAttribute="trailing" secondItem="SZk-IS-dpi" secondAttribute="trailing" constant="20" id="WAL-hg-w4F"/>
+                                        <constraint firstItem="xui-yo-qCg" firstAttribute="centerY" secondItem="K2u-HJ-P6P" secondAttribute="centerY" id="X6A-UT-Arz"/>
+                                        <constraint firstItem="tnA-iu-ies" firstAttribute="top" secondItem="K2u-HJ-P6P" secondAttribute="topMargin" id="hoU-bq-ONO"/>
+                                    </constraints>
                                 </tableViewCellContentView>
                                 <connections>
                                     <outlet property="charCodeLabel" destination="xui-yo-qCg" id="2y1-QH-kL0"/>
                                     <outlet property="nameLabel" destination="SZk-IS-dpi" id="Dzb-Ot-6N7"/>
-                                    <outlet property="valueLabel" destination="TEB-He-ggf" id="l3e-2S-Yh6"/>
+                                    <outlet property="valueTextField" destination="tnA-iu-ies" id="rLd-UT-0A5"/>
                                 </connections>
                             </tableViewCell>
                         </prototypes>

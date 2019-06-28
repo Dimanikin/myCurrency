@@ -7,6 +7,6 @@
 //
 
 struct Contents {
-    static let urlString = "https://www.cbr-xml-daily.ru/daily_json.js"
+    static let urlString = " https://www.cbr-xml-daily.ru/daily_json.js"
 }
 

@@ -19,7 +19,7 @@ class TableViewController: UITableViewController {
     var arrayOfMoney = [TypeCurrency]() {
         didSet {
             DispatchQueue.main.async {
-                self.tableView.reloadData()
+            self.tableView.reloadData()
             }
         }
     }
@@ -45,6 +45,9 @@ class TableViewController: UITableViewController {
                 self.arrayOfMoney.append(parseJson.valute.usd)
                 self.arrayOfMoney.append(parseJson.valute.eur)
                 self.arrayOfMoney.append(parseJson.valute.sgd)
+                self.arrayOfMoney.append(parseJson.valute.byn)
+                self.arrayOfMoney.append(parseJson.valute.pln)
+                self.arrayOfMoney.append(parseJson.valute.tryLira)
                 print(parseJson)
                 
             } catch  let error {
@@ -66,7 +69,6 @@ extension TableViewController {
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "Cell", for: indexPath) as! CustomizeCell
         configureCell(cell: cell, for: indexPath)
-        
         return cell
     }
     
@@ -74,6 +76,11 @@ extension TableViewController {
         let currency = arrayOfMoney[indexPath.row]
         cell.charCodeLabel?.text = currency.charCode
         cell.nameLabel?.text = currency.name
-        cell.valueLabel.text = "\(currency.value)"
+        cell.valueTextField.text = "\(NSString(format:"%.2f", currency.value))"
     }
+    
+    override func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        return 60
+    }
+    
 }

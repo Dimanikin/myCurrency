@@ -12,6 +12,6 @@ class CustomizeCell: UITableViewCell {
 
     @IBOutlet weak var charCodeLabel: UILabel!
     @IBOutlet weak var nameLabel: UILabel!
-    @IBOutlet weak var valueLabel: UILabel!
+    @IBOutlet weak var valueTextField: UITextField!
     
 }

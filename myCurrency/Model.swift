@@ -25,7 +25,7 @@ struct DailyCurrency: Decodable {
 
 struct Valute: Decodable {
     
-    let usd, eur, sgd, byn, pln, tryLira: TypeCurrency
+    let usd, eur, sgd, byn, pln, tryLira, inr, kzt: TypeCurrency
     
     enum CodingKeys: String, CodingKey {
         case usd = "USD"
@@ -34,6 +34,8 @@ struct Valute: Decodable {
         case byn = "BYN"
         case pln = "PLN"
         case tryLira = "TRY"
+        case inr = "INR"
+        case kzt = "KZT"
     }
     
     init(from decoder: Decoder) throws {
@@ -44,6 +46,8 @@ struct Valute: Decodable {
         byn = try container.decode(TypeCurrency.self, forKey: .byn)
         pln = try container.decode(TypeCurrency.self, forKey: .pln)
         tryLira = try container.decode(TypeCurrency.self, forKey: .tryLira)
+        inr = try container.decode(TypeCurrency.self, forKey: .inr)
+        kzt = try container.decode(TypeCurrency.self, forKey: .kzt)
     }
     
 }

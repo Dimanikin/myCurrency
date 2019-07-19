@@ -6,16 +6,15 @@
 //  Copyright © 2019 Dima Anikin. All rights reserved.
 //
 
-//  JSON
-//  http://www.floatrates.com/daily/usd.json
-//  https://www.cbr-xml-daily.ru/daily_json.js
-
 
 import UIKit
 
 class TableViewController: UITableViewController {
     
+    var baseValute = "USD"
+    
     // MARK: - Properties
+    var arrayOfImage = ["USD","EUR","SGD","BYN","PLN","TRY","INR","KZT"]
     var arrayOfMoney = [TypeCurrency]() {
         didSet {
             DispatchQueue.main.async {
@@ -48,6 +47,8 @@ class TableViewController: UITableViewController {
                 self.arrayOfMoney.append(parseJson.valute.byn)
                 self.arrayOfMoney.append(parseJson.valute.pln)
                 self.arrayOfMoney.append(parseJson.valute.tryLira)
+                self.arrayOfMoney.append(parseJson.valute.inr)
+                self.arrayOfMoney.append(parseJson.valute.kzt)
                 print(parseJson)
                 
             } catch  let error {
@@ -69,6 +70,7 @@ extension TableViewController {
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "Cell", for: indexPath) as! CustomizeCell
         configureCell(cell: cell, for: indexPath)
+        
         return cell
     }
     
@@ -76,7 +78,9 @@ extension TableViewController {
         let currency = arrayOfMoney[indexPath.row]
         cell.charCodeLabel?.text = currency.charCode
         cell.nameLabel?.text = currency.name
+        cell.nominalLabel.text = "\(currency.nominal)"
         cell.valueTextField.text = "\(NSString(format:"%.2f", currency.value))"
+        cell.imageViewPic.image = UIImage(named: arrayOfImage[indexPath.row])
     }
     
     override func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
@@ -84,3 +88,4 @@ extension TableViewController {
     }
     
 }
+

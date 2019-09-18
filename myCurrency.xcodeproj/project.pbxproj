@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		CE36937222B62598007CCD7E /* Contents.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE36937122B62598007CCD7E /* Contents.swift */; };
+		CE953CBA22E5AF9A000A9E47 /* AddValuteTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE953CB922E5AF9A000A9E47 /* AddValuteTableViewController.swift */; };
 		CEBD94492299C09400B925AE /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEBD94482299C09400B925AE /* AppDelegate.swift */; };
 		CEBD94512299C09400B925AE /* myCurrency.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = CEBD944F2299C09400B925AE /* myCurrency.xcdatamodeld */; };
 		CEBD94532299C09500B925AE /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CEBD94522299C09500B925AE /* Assets.xcassets */; };
@@ -20,6 +21,7 @@
 
 /* Begin PBXFileReference section */
 		CE36937122B62598007CCD7E /* Contents.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Contents.swift; sourceTree = "<group>"; };
+		CE953CB922E5AF9A000A9E47 /* AddValuteTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddValuteTableViewController.swift; sourceTree = "<group>"; };
 		CEBD94452299C09400B925AE /* myCurrency.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = myCurrency.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		CEBD94482299C09400B925AE /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		CEBD94502299C09400B925AE /* myCurrency.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = myCurrency.xcdatamodel; sourceTree = "<group>"; };
@@ -65,6 +67,7 @@
 				CEBD94482299C09400B925AE /* AppDelegate.swift */,
 				CEBD9481229F360400B925AE /* CustomizeCell.swift */,
 				CEC3860522A17481009951E4 /* Main.storyboard */,
+				CE953CB922E5AF9A000A9E47 /* AddValuteTableViewController.swift */,
 				CEBD945D2299D2AC00B925AE /* TableViewController.swift */,
 				CE36937122B62598007CCD7E /* Contents.swift */,
 				CEBD945F2299D9CD00B925AE /* Model.swift */,
@@ -153,6 +156,7 @@
 				CEBD94492299C09400B925AE /* AppDelegate.swift in Sources */,
 				CEBD945E2299D2AC00B925AE /* TableViewController.swift in Sources */,
 				CEBD94512299C09400B925AE /* myCurrency.xcdatamodeld in Sources */,
+				CE953CBA22E5AF9A000A9E47 /* AddValuteTableViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

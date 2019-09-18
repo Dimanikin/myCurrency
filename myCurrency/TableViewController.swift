@@ -6,16 +6,13 @@
 //  Copyright © 2019 Dima Anikin. All rights reserved.
 //
 
-
 import UIKit
 
 class TableViewController: UITableViewController {
     
-    var baseValute = "USD"
-    
     // MARK: - Properties
     var arrayOfImage = ["USD","EUR","SGD","BYN","PLN","TRY","INR","KZT"]
-    var arrayOfMoney = [TypeCurrency]() {
+    var arrayOfMoney = [Valute]() {
         didSet {
             DispatchQueue.main.async {
             self.tableView.reloadData()
@@ -40,16 +37,8 @@ class TableViewController: UITableViewController {
             
             do {
                 
-                let parseJson = try JSONDecoder().decode(DailyCurrency.self, from: data)
-                self.arrayOfMoney.append(parseJson.valute.usd)
-                self.arrayOfMoney.append(parseJson.valute.eur)
-                self.arrayOfMoney.append(parseJson.valute.sgd)
-                self.arrayOfMoney.append(parseJson.valute.byn)
-                self.arrayOfMoney.append(parseJson.valute.pln)
-                self.arrayOfMoney.append(parseJson.valute.tryLira)
-                self.arrayOfMoney.append(parseJson.valute.inr)
-                self.arrayOfMoney.append(parseJson.valute.kzt)
-                print(parseJson)
+                let parseJson = try JSONDecoder().decode(Valute.self, from: data)
+                self.arrayOfMoney.insert(parseJson, at: 0)
                 
             } catch  let error {
                 print(error.localizedDescription)
@@ -57,6 +46,12 @@ class TableViewController: UITableViewController {
             
         }.resume()
     }
+    
+    @IBAction func updateCourseButton(_ sender: UIBarButtonItem) {
+        fetchRequest()
+    }
+    
+    @IBAction func unwindToMainVC(_ unwindSegue: UIStoryboardSegue) {}
     
 }
 
@@ -73,18 +68,18 @@ extension TableViewController {
         
         return cell
     }
-    
+
     private func configureCell(cell: CustomizeCell, for indexPath: IndexPath) {
         let currency = arrayOfMoney[indexPath.row]
-        cell.charCodeLabel?.text = currency.charCode
-        cell.nameLabel?.text = currency.name
-        cell.nominalLabel.text = "\(currency.nominal)"
-        cell.valueTextField.text = "\(NSString(format:"%.2f", currency.value))"
+
+        cell.charCodeLabel?.text = currency.usd.alphaCode
+        cell.nameLabel?.text = currency.usd.name
+        cell.valueTextField.text = "\(NSString(format:"%.2f", currency.usd.inverseRate))"
         cell.imageViewPic.image = UIImage(named: arrayOfImage[indexPath.row])
     }
-    
+ 
     override func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        return 60
+        return 65
     }
     
 }

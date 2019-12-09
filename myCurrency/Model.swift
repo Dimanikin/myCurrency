@@ -9,7 +9,7 @@
 import Foundation
 
 struct Valute: Decodable {
-    let usd, eur, lkr: TypeCurrency
+    let usd, eur, lkr, sgd, byn, pln, inr, kzt: TypeCurrency
 }
 
 struct TypeCurrency: Decodable {
